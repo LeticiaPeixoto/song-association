@@ -1,0 +1,18 @@
+<div class="player-slot d-flex align-items-center gap-2 rounded-3 px-3 py-2" [class]="colorClass">
+  <input
+    type="text"
+    class="slot-input flex-grow-1 border-0"
+    maxlength="20"
+    [formControl]="control"
+    [placeholder]="placeholder"
+  />
+  <button
+    *ngIf="removable"
+    type="button"
+    class="slot-remove flex-shrink-0 border-0 rounded-2"
+    title="Remover"
+    (click)="remove.emit()"
+  >
+    ✕
+  </button>
+</div>

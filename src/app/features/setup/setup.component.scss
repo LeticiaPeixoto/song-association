@@ -1,0 +1,67 @@
+.text-accent {
+  color: var(--accent);
+}
+
+.btn-add-player {
+  background: transparent;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: border-color 0.15s, color 0.15s;
+
+  &:hover:not(:disabled) {
+    border-color: var(--accent3);
+    color: var(--accent3);
+  }
+  &:disabled {
+    opacity: 0.3;
+  }
+}
+
+.timer-opt {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: border-color 0.15s, background 0.15s;
+
+  span {
+    font-size: 0.5rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  &:hover {
+    border-color: var(--accent3);
+    color: var(--text);
+  }
+
+  &.selected {
+    border-color: var(--accent);
+    background: rgba(200, 242, 58, 0.08);
+    color: var(--accent);
+  }
+}
+
+.btn-start {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 14px;
+  font-weight: 800;
+  padding: 16px;
+  transition: box-shadow 0.15s, transform 0.1s;
+
+  &:hover {
+    box-shadow: 0 6px 28px rgba(200, 242, 58, 0.35);
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}

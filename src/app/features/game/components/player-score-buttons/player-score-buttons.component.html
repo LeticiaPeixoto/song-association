@@ -1,0 +1,17 @@
+<div class="score-btn-label font-mono text-uppercase text-muted-app mb-2" style="letter-spacing: 2px; font-size: .58rem">
+  Quem acertou?
+</div>
+
+<div class="score-buttons w-100 d-grid gap-2" style="grid-template-columns: 1fr 1fr">
+  <button
+    type="button"
+    class="score-btn d-flex align-items-center gap-2 rounded-3 px-3 py-2"
+    *ngFor="let player of players"
+    [class]="player.colorClass"
+    [class.scored]="isScored(player.id)"
+    (click)="toggle.emit(player.id)"
+  >
+    <span class="score-btn-name fw-bold flex-grow-1 text-start text-truncate">{{ player.name }}</span>
+    <span class="score-btn-check">✓</span>
+  </button>
+</div>

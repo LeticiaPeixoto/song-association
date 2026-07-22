@@ -1,0 +1,79 @@
+<div class="screen-shell justify-content-center px-3 py-5">
+  <div class="text-center mb-2">
+    <span class="fs-2 fw-bolder" style="letter-spacing: -1px">Song<span class="text-accent">Association</span></span>
+  </div>
+  <div class="text-center font-mono text-uppercase text-muted-app mb-3" style="letter-spacing: 2px; font-size: .72rem">
+    Configure sua partida
+  </div>
+
+  <div class="w-100 mx-auto p-4 rounded-4 d-flex flex-column gap-4" style="max-width: 480px; background: var(--card); border: 1px solid var(--border)">
+    <div>
+      <div class="font-mono text-uppercase text-muted-app mb-3" style="letter-spacing: 2px; font-size: .6rem">
+        Jogadores ({{ minPlayers }} a {{ maxPlayers }})
+      </div>
+
+      <div class="d-flex flex-column gap-2">
+        <app-player-slot
+          *ngFor="let control of playerControls; let i = index"
+          [control]="control"
+          [index]="i"
+          [removable]="players.length > minPlayers"
+          (remove)="removePlayer(i)"
+        ></app-player-slot>
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-add-player w-100 mt-3"
+        [disabled]="players.length >= maxPlayers"
+        (click)="addPlayer()"
+      >
+        + Adicionar jogador
+      </button>
+    </div>
+
+    <div>
+      <div class="font-mono text-uppercase text-muted-app mb-3" style="letter-spacing: 2px; font-size: .6rem">
+        Tempo por rodada
+      </div>
+      <div class="d-grid gap-2" style="grid-template-columns: repeat(4, 1fr)">
+        <div
+          *ngFor="let seconds of timerOptions"
+          class="timer-opt text-center rounded-3 py-2 font-mono fw-bold"
+          [class.selected]="selectedTimer() === seconds"
+          (click)="selectTimer(seconds)"
+        >
+          {{ seconds }}
+          <span class="d-block text-uppercase">seg</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-mono text-uppercase text-muted-app mb-3" style="letter-spacing: 2px; font-size: .6rem">
+        Quantidade de rodadas/palavras
+      </div>
+      <div class="d-grid gap-2" style="grid-template-columns: repeat(4, 1fr)">
+        <div
+          *ngFor="let rounds of roundOptions"
+          class="timer-opt text-center rounded-3 py-2 font-mono fw-bold"
+          [class.selected]="selectedRounds() === rounds"
+          (click)="selectRounds(rounds)"
+        >
+          {{ rounds }}
+          <span class="d-block text-uppercase">rodadas</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-mono text-center small mb-2" style="color: var(--accent2); min-height: 16px">
+        {{ errorMessage() }}
+      </div>
+      <button type="button" class="btn btn-start w-100" [disabled]="startingGame()" (click)="startGame()">
+        <span *ngIf="startingGame()" class="spinner-border spinner-border-sm me-2"></span>
+        {{ startingGame() ? 'Sorteando palavras…' : 'Iniciar Partida' }}
+      </button>
+    </div>
+  </div>
+</div>

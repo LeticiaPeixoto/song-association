@@ -1,0 +1,80 @@
+.text-accent {
+  color: var(--accent);
+}
+
+.ranking-image {
+  max-height: 120px;
+}
+
+@keyframes trophyPop {
+  from {
+    transform: scale(0) rotate(-15deg);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+.ranking-title {
+  font-size: 1.8rem;
+  letter-spacing: -1px;
+}
+
+.ranking-subtitle {
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+}
+
+.rstat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.rstat-val {
+  font-size: 1.3rem;
+  color: var(--text);
+}
+
+.rstat-lbl {
+  font-size: 0.55rem;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.btn-play-again {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  padding: 16px;
+  transition: box-shadow 0.15s, transform 0.1s;
+
+  &:hover {
+    box-shadow: 0 6px 28px rgba(200, 242, 58, 0.3);
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.btn-new-players {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 13px;
+  color: var(--muted);
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+
+  &:hover {
+    border-color: var(--muted);
+    color: var(--text);
+  }
+}

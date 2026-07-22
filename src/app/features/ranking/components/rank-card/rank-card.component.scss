@@ -1,0 +1,108 @@
+.rank-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  animation: rankSlide 0.35s ease both;
+}
+
+@keyframes rankSlide {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rank-card.rank-1 {
+  border-color: #d4a017;
+  background: linear-gradient(135deg, #1e1a0a 0%, #252010 100%);
+  box-shadow: 0 4px 20px rgba(212, 160, 23, 0.18);
+
+  .rank-position {
+    background: #f5d547;
+    color: #7a5800;
+    font-size: 1.3rem;
+  }
+  .rank-score {
+    color: #f5d547;
+  }
+}
+
+.rank-card.rank-2 {
+  background: linear-gradient(135deg, #181820 0%, #141420 100%);
+
+  .rank-position {
+    background: #d8d8e0;
+    color: #555560;
+  }
+  .rank-score {
+    color: #b0b0c0;
+  }
+}
+
+.rank-card.rank-3 {
+  background: linear-gradient(135deg, #1c1510 0%, #201810 100%);
+
+  .rank-position {
+    background: #e8c8a8;
+    color: #7a4a1a;
+  }
+  .rank-score {
+    color: #d4935a;
+  }
+}
+
+.rank-card.rank-other {
+  .rank-position {
+    background: #f0f0ec;
+    color: var(--muted);
+  }
+  .rank-score {
+    color: var(--muted);
+  }
+}
+
+.rank-position {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.rank-name {
+  font-size: 1.05rem;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rank-meta {
+  font-size: 0.65rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.rank-score {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.rank-score-lbl {
+  font-size: 0.55rem;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+}
+
+.rank-tie {
+  font-size: 0.55rem;
+  letter-spacing: 1.5px;
+  background: rgba(123, 97, 255, 0.15);
+  color: var(--accent3);
+  border: 1px solid rgba(123, 97, 255, 0.3);
+  padding: 2px 7px;
+  border-radius: 999px;
+}

@@ -1,0 +1,12 @@
+<div class="modal-overlay" [class.show]="open" (click)="cancel.emit()">
+  <div class="modal-box rounded-4 px-4 py-4" (click)="$event.stopPropagation()">
+    <h2 class="text-danger fw-bolder text-center mb-3">Encerrar partida?</h2>
+    <div class="modal-body text-center mb-4">
+      O jogo será finalizado e o ranking será exibido com a pontuação atual.
+    </div>
+    <div class="modal-actions d-grid gap-2" style="grid-template-columns: 1fr 1fr">
+      <button type="button" class="btn btn-outline-secondary" (click)="cancel.emit()">Continuar jogando</button>
+      <button type="button" class="btn btn-outline-danger" (click)="confirm.emit()">Encerrar</button>
+    </div>
+  </div>
+</div>

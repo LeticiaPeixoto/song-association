@@ -1,0 +1,44 @@
+.player-slot {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s;
+
+  &:focus-within {
+    border-color: var(--accent3);
+  }
+}
+
+.slot-input {
+  background: transparent;
+  outline: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+
+  &::placeholder {
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.slot-remove {
+  width: 26px;
+  height: 26px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+
+  &:hover {
+    background: rgba(255, 79, 109, 0.15);
+    color: var(--accent2);
+  }
+}

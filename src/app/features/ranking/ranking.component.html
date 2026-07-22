@@ -1,0 +1,42 @@
+<app-confetti-canvas [play]="showConfetti()"></app-confetti-canvas>
+
+<div class="screen-shell align-items-center px-3" style="padding-top: 48px; padding-bottom: 60px">
+  <div class="text-center mb-5">
+    <div class="mb-2">
+      <img class="ranking-image" src="pablo.gif">
+    </div>
+    <div class="ranking-title fw-bolder mb-1">Fim de <span class="text-accent">Jogo!</span></div>
+    <div class="ranking-subtitle font-mono text-uppercase text-muted-app">{{ subtitle() }}</div>
+  </div>
+
+  <div class="ranking-list w-100 d-flex flex-column gap-2 mb-4" style="max-width: 480px">
+    <app-rank-card *ngFor="let player of rankedPlayers()" [player]="player"></app-rank-card>
+  </div>
+
+  <div class="ranking-stats w-100 d-grid gap-2 mb-4" style="max-width: 480px; grid-template-columns: repeat(3, 1fr)">
+    <div class="rstat-card rounded-3 text-center px-2 py-3">
+      <div class="rstat-val font-mono fw-bold">{{ roundsPlayed() }}</div>
+      <div class="rstat-lbl font-mono text-uppercase">Rodadas</div>
+    </div>
+    <div class="rstat-card rounded-3 text-center px-2 py-3">
+      <div class="rstat-val font-mono fw-bold">{{ stats().points }}</div>
+      <div class="rstat-lbl font-mono text-uppercase">Pontos totais</div>
+    </div>
+    <div class="rstat-card rounded-3 text-center px-2 py-3">
+      <div class="rstat-val font-mono fw-bold">{{ stats().passes }}</div>
+      <div class="rstat-lbl font-mono text-uppercase">Passes</div>
+    </div>
+  </div>
+
+  <div class="ranking-actions w-100 d-flex flex-column gap-2" style="max-width: 480px">
+    <button type="button" class="btn-play-again w-100" (click)="playAgain()">
+      <i class="fa-solid fa-arrows-rotate"></i>
+      Jogar de Novo (mesmos jogadores)
+    </button>
+
+    <button type="button" class="btn-new-players w-100" (click)="newPlayers()">
+      <i class="fa-solid fa-people-group"></i>
+      Nova Partida com outros jogadores
+    </button>
+  </div>
+</div>

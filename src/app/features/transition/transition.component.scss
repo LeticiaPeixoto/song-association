@@ -1,0 +1,21 @@
+.trans-score-row {
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+.btn-ready {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 14px;
+  font-weight: 800;
+  padding: 16px;
+  transition: box-shadow 0.15s, transform 0.1s;
+
+  &:hover {
+    box-shadow: 0 6px 28px rgba(200, 242, 58, 0.35);
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}

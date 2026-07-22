@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg: #0d0d14;
+  --surface: #15151f;
+  --card: #1c1c2a;
+  --border: #2a2a3d;
+  --accent: #c8f23a;
+  --accent2: #ff4f6d;
+  --accent3: #7b61ff;
+  --timer: #1a7fd4;
+  --timer-paused: #7b61ff;
+  --accent4: #2ec4b6;
+  --accent5: #ff5d5d;
+  --text: #eeeef5;
+  --muted: #6b6b88;
+  --radius: 16px;
+  --sidebar-width: 300px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: 
+    radial-gradient(circle at 15% 12%, rgba(245, 183, 0, 0.10) 0, transparent 40%),
+    radial-gradient(circle at 85% 8%, rgba(46, 196, 182, 0.10) 0, transparent 38%),
+    radial-gradient(circle at 90% 85%, rgba(255, 93, 93, 0.10) 0, transparent 40%),
+    repeating-radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.028) 0 2px, transparent 2px 34px),
+    linear-gradient(160deg, #1D1240 0%, #241653 55%, #1A0F38 100%);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  min-height: 100vh;
+}
+
+.font-mono {
+  font-family: 'Space Mono', monospace;
+}
+
+.text-muted-app {
+  color: var(--muted) !important;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+// Cores por jogador (avatar / faixa lateral)
+.c1 {
+  --player-color: var(--accent);
+  --player-bg: rgba(200, 242, 58, 0.12);
+}
+.c2 {
+  --player-color: var(--accent3);
+  --player-bg: rgba(123, 97, 255, 0.12);
+}
+.c3 {
+  --player-color: var(--accent2);
+  --player-bg: rgba(255, 79, 109, 0.12);
+}
+.c4 {
+  --player-color: #ffb432;
+  --player-bg: rgba(255, 180, 50, 0.12);
+}
+.c5 {
+  --player-color: var(--accent4);
+  --player-bg: rgba(46, 196, 182, 0.12);
+}
+.c6 {
+  --player-color: var(--accent5);
+  --player-bg: rgba(255, 93, 93, 0.12);
+}
+
+.screen-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

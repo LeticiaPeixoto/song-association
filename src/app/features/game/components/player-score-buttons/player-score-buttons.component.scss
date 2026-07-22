@@ -1,0 +1,41 @@
+.score-btn-label {
+  padding-left: 2px;
+}
+
+.score-btn {
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+  transition: transform 0.1s, box-shadow 0.15s, background 0.15s, border-color 0.15s;
+  cursor: pointer;
+  text-align: left;
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:hover {
+    border-color: var(--player-color);
+  }
+}
+
+.score-btn-name {
+  font-size: 0.9rem;
+}
+
+.score-btn-check {
+  font-size: 1rem;
+  font-weight: 800;
+  color: transparent;
+  transition: color 0.15s;
+}
+
+.score-btn.scored {
+  background: var(--player-bg);
+  border-color: var(--player-color);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+
+  .score-btn-check {
+    color: var(--player-color);
+  }
+}

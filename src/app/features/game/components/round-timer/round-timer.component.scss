@@ -1,0 +1,57 @@
+.timer-wrap {
+  width: 168px;
+  height: 168px;
+}
+
+.timer-svg {
+  transform: rotate(-90deg);
+}
+
+.timer-bg-circle {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 10;
+}
+
+.timer-arc {
+  fill: none;
+  stroke: var(--timer);
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke 0.3s, stroke-dashoffset 1s linear;
+
+  &.urgent {
+    stroke: var(--accent2);
+  }
+  &.paused {
+    stroke: var(--timer-paused);
+  }
+}
+
+.timer-center {
+  inset: 0;
+}
+
+.timer-digits {
+  font-size: 2.6rem;
+  letter-spacing: -2px;
+  line-height: 1;
+
+  &.urgent {
+    color: var(--accent2);
+  }
+}
+
+.timer-status {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: var(--muted);
+  height: 16px;
+
+  &.running {
+    color: var(--timer);
+  }
+  &.paused {
+    color: var(--accent3);
+  }
+}

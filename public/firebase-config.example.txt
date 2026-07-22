@@ -1,0 +1,18 @@
+# Arquivo de conexão com o Firestore.
+#
+# Para usar palavras vindas do Firestore em vez da lista local:
+#   1. Copie este arquivo para "firebase-config.txt" (mesma pasta, public/).
+#   2. Preencha os valores abaixo com as credenciais do seu projeto Firebase.
+#   3. Rode/build o app normalmente.
+#
+# Se "firebase-config.txt" não existir, estiver incompleto, ou a conexão
+# falhar por qualquer motivo, o app usa automaticamente as palavras locais
+# (nenhuma ação do usuário é necessária).
+#
+# Formato: chave=valor, uma por linha. Linhas iniciadas com "#" são ignoradas.
+
+apiKey=
+authDomain=
+projectId=
+appId=
+collection=palavras

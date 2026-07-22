@@ -1,0 +1,24 @@
+<div class="timer-section d-flex flex-column align-items-center gap-2 w-100">
+  <div class="timer-wrap position-relative">
+    <svg class="timer-svg" viewBox="0 0 168 168" width="168" height="168">
+      <circle class="timer-bg-circle" cx="84" cy="84" r="72" />
+      <circle
+        class="timer-arc"
+        [class.urgent]="urgent"
+        [class.paused]="paused"
+        cx="84"
+        cy="84"
+        r="72"
+        [attr.stroke-dasharray]="circumference"
+        [attr.stroke-dashoffset]="dashOffset"
+      />
+    </svg>
+    <div class="timer-center position-absolute d-flex flex-column align-items-center justify-content-center">
+      <div class="timer-digits font-mono fw-bold" [class.urgent]="urgent">{{ timeLeft }}</div>
+      <div class="font-mono text-uppercase text-muted-app" style="letter-spacing: 2px; font-size: .6rem">seg</div>
+    </div>
+  </div>
+  <div class="timer-status font-mono text-uppercase" [class.running]="running" [class.paused]="paused">
+    {{ statusLabel }}
+  </div>
+</div>

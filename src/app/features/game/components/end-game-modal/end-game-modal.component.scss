@@ -1,0 +1,43 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.modal-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  max-width: 360px;
+  width: 90%;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  transform: scale(0.95) translateY(8px);
+  transition: transform 0.2s, opacity 0.2s;
+  opacity: 0;
+}
+
+.modal-overlay.show .modal-box {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.modal-title {
+  font-size: 1.1rem;
+}
+
+.modal-body {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}

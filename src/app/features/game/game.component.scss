@@ -1,0 +1,60 @@
+.text-accent {
+  color: var(--accent);
+}
+
+.source-badge {
+  font-size: 0.58rem;
+  letter-spacing: 1.5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid;
+
+  &.firestore {
+    color: #ffca28;
+    border-color: rgba(255, 202, 40, 0.4);
+    background: rgba(255, 202, 40, 0.07);
+  }
+  &.local {
+    color: var(--muted);
+    border-color: var(--border);
+    background: transparent;
+  }
+}
+
+.round-badge {
+  font-size: 0.72rem;
+  color: var(--muted);
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  border-radius: 999px;
+  letter-spacing: 1px;
+}
+
+.history-pip {
+  top: 5px;
+  right: 5px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent3);
+  border: 2px solid var(--bg);
+}
+
+.flash {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 300;
+  opacity: 0;
+  transition: opacity 0.25s;
+
+  &.green {
+    background: rgba(200, 242, 58, 0.08);
+  }
+  &.red {
+    background: rgba(255, 79, 109, 0.1);
+  }
+  &.show {
+    opacity: 1;
+  }
+}

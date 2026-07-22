@@ -1,0 +1,32 @@
+<div class="screen-shell justify-content-center px-3 py-5 text-center" *ngIf="players().length > 0">
+  <div class="font-mono text-uppercase text-muted-app mb-4" style="letter-spacing: 3px; font-size: .65rem">
+    {{ label() }}
+  </div>
+
+  <div class="mx-auto mb-2 d-flex align-items-center justify-content-center rounded-4">
+    <img src="logo.png"/>
+  </div>
+
+  <div class="fs-1 fw-bolder mb-2" style="letter-spacing: -1px">Todos jogam!</div>
+  <div class="font-mono text-muted-app mb-2" style="font-size: .75rem">
+    <p class="mb-2">O objetivo é simples: cantar uma música que contenha a palavra sorteada antes que o tempo acabe.</p>
+    <p>Caso cante, contabilize o acerto clicando no botão correspondente ao jogador, para que o ponto seja contabilizado.</p>
+  </div>
+
+  <div class="w-100 mx-auto mb-5 d-flex flex-column gap-2" style="max-width: 380px">
+    <div
+      *ngFor="let p of players()"
+      class="trans-score-row d-flex align-items-center justify-content-between rounded-3 px-3 py-2"
+    >
+      <div class="fw-bold d-flex align-items-center gap-2">
+        {{ p.name }}
+      </div>
+      <div class="fw-bold font-mono fs-5" style="color: var(--accent)">{{ p.score }}</div>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-ready w-100 mx-auto" style="max-width: 380px" (click)="ready()">
+    Estou pronto
+    <i class="fa-solid fa-play"></i>
+  </button>
+</div>

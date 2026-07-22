@@ -1,0 +1,14 @@
+<div class="rank-card d-flex align-items-center gap-3 rounded-4 px-3 py-3" [class]="rankClass">
+  <div class="rank-position fw-bold text-center">{{ medal }}</div>
+  <div class="flex-grow-1 overflow-hidden">
+    <div class="rank-name fw-bold d-flex align-items-center gap-2">
+      {{ player.name }}
+      <span class="rank-tie font-mono" *ngIf="player.tied">Empate</span>
+    </div>
+    <div class="rank-meta">{{ scoreLabel }}</div>
+  </div>
+  <div class="text-end">
+    <div class="rank-score font-mono fw-bold">{{ player.score }}</div>
+    <div class="rank-score-lbl font-mono text-uppercase">pts</div>
+  </div>
+</div>

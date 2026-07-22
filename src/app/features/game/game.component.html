@@ -1,0 +1,46 @@
+<div class="flash" [class]="flashColor()" [class.show]="flashColor() !== ''"></div>
+
+<app-end-game-modal [open]="endGameModalOpen()" (confirm)="confirmEndGame()" (cancel)="closeEndGameModal()"></app-end-game-modal>
+
+<div class="screen-shell px-3 py-4">
+  <div class="row d-flex align-items-center justify-content-between mb-3" style="max-width: 560px">
+    <div class="col-auto fs-4 fw-bolder" style="letter-spacing: -.5px">Song<span class="text-accent">Association</span></div>
+    
+    <div class="col ms-auto d-flex align-items-center gap-2">
+      <span class="source-badge font-mono text-uppercase" [class]="wordSource()">
+        {{ wordSource() === 'firestore' ? 'Firestore' : 'Local' }}
+      </span>
+
+      <div class="round-badge font-mono text-uppercase">Rodada {{ round() }}/{{ totalRounds() }}</div>
+      
+      <button type="button" class="btn btn-outline-danger btn-sm" (click)="openEndGameModal()">
+        <i class="fa-solid fa-stop"></i>
+      </button>
+
+      <button type="button" class="btn btn-outline-light btn-sm" (click)="toggleMute()">
+        <i *ngIf="isMuted()" class="fa-solid fa-volume-xmark"></i>
+        <i *ngIf="!isMuted()" class="fa-solid fa-volume"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="w-100 mb-4" style="max-width: 560px">
+    <app-round-timer [timeLeft]="timeLeft()" [total]="total()" [running]="running()" [paused]="paused()"></app-round-timer>
+  </div>
+
+  <div class="w-100 mb-3" style="max-width: 560px">
+    <app-word-card [word]="currentWord()"></app-word-card>
+  </div>
+
+  <div class="w-100 mb-3" style="max-width: 560px">
+    <app-player-score-buttons
+      [players]="players()"
+      [scoredIds]="scoredPlayerIds()"
+      (toggle)="toggleScore($event)"
+    ></app-player-score-buttons>
+  </div>
+
+  <div class="w-100" style="max-width: 560px">
+    <app-game-actions [running]="running()" (pass)="pass()"></app-game-actions>
+  </div>
+</div>
